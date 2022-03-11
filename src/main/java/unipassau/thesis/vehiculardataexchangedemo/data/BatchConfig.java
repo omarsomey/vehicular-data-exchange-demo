@@ -26,7 +26,7 @@ import unipassau.thesis.vehiculardataexchangedemo.model.VehiculeData;
 public class BatchConfig {
 
     private final String[] FIELD_NAMES= new String[]{
-             "Altitude"
+            "gps_time", "device_time", "longitude", "latitude", "gps_speed", "hdop", "altitude", "bearing", "engine_temp", "rpm", "engine_load", "throttle_p"
     };
 
     @Autowired
@@ -39,7 +39,7 @@ public class BatchConfig {
     public FlatFileItemReader<VehiculeOutput> reader() {
         return new FlatFileItemReaderBuilder<VehiculeOutput>()
                 .name("VehiculeOutputItemReader")
-                .resource(new ClassPathResource("OBD1.csv"))
+                .resource(new ClassPathResource("OBD.csv"))
                 .delimited()
                 .names(FIELD_NAMES)
                 .fieldSetMapper(new BeanWrapperFieldSetMapper<VehiculeOutput>() {{
@@ -57,8 +57,8 @@ public class BatchConfig {
     public JdbcBatchItemWriter<VehiculeData> writer(DataSource dataSource) {
         return new JdbcBatchItemWriterBuilder<VehiculeData>()
                 .itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())
-                .sql("INSERT INTO vehiculedata (id, altitude) "
-                        + " VALUES (:id, :altitude)")
+                .sql("INSERT INTO vehiculedata (id, gps_time, device_time, longitude, latitude, gps_speed, hdop, altitude, bearing, engine_temp, rpm, engine_load, throttle_p) "
+                        + " VALUES (:id, :gps_time, :device_time, :longitude, :latitude, :gps_speed, :hdop, :altitude, :bearing, :engine_temp, :rpm, :engine_load, :throttle_p)")
                 .dataSource(dataSource)
                 .build();
     }
