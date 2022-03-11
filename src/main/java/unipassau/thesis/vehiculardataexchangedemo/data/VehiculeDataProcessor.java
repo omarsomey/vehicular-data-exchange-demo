@@ -16,19 +16,6 @@ public class VehiculeDataProcessor implements ItemProcessor<VehiculeOutput, Vehi
         VehiculeData vehiculedata = new VehiculeData();
 
         vehiculedata.setAltitude(vehiculeOutput.getAltitude());
-        vehiculedata.setBearing(vehiculeOutput.getBearing());
-        vehiculedata.setDevice_time(vehiculeOutput.getDevice_time());
-        vehiculedata.setEngine_load(vehiculeOutput.getEngine_load());
-        vehiculedata.setEngine_temp(vehiculeOutput.getEngine_temp());
-        vehiculedata.setGps_speed(vehiculeOutput.getGps_speed());
-        vehiculedata.setHdoP(vehiculeOutput.getHdoP());
-        vehiculedata.setRpm(vehiculeOutput.getRpm());
-        vehiculedata.setThrottle_p(vehiculeOutput.getThrottle_p());
-        vehiculedata.setLatitude(vehiculeOutput.getLatitude());
-        vehiculedata.setLongitude(vehiculeOutput.getLongitude());
-        vehiculedata.setGps_time(vehiculeOutput.getGps_time());
-
-
 
 
         return vehiculedata;

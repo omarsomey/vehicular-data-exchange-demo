@@ -26,7 +26,7 @@ import unipassau.thesis.vehiculardataexchangedemo.model.VehiculeData;
 public class BatchConfig {
 
     private final String[] FIELD_NAMES= new String[]{
-            "GPS Time", "Device Time", "Longitude", "Latitude","GPS Speed (Meters/second)", "Horizontal Dilution of Precision", "Altitude", "Bearing", "Engine Coolant Temperature(°C)", "Engine RPM(rpm)", "Engine Load(%)", "Throttle Position(Manifold)(%)"
+             "Altitude"
     };
 
     @Autowired
@@ -57,8 +57,8 @@ public class BatchConfig {
     public JdbcBatchItemWriter<VehiculeData> writer(DataSource dataSource) {
         return new JdbcBatchItemWriterBuilder<VehiculeData>()
                 .itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())
-                .sql("INSERT INTO vehiculedata (id, gps_time, device_time, longitude, latitude, gps_speed, hdop, altitude, bearing, engine_temp, rpm, engine_load, throttle_p) "
-                        + " VALUES (:id, :gps_time, :device_time, :longitude, :latitude, :gps_speed, :hdop, :altitude, :bearing, :engine_temp, :rpm, :engine_load, :throttle_p)")
+                .sql("INSERT INTO vehiculedata (id, altitude) "
+                        + " VALUES (:id, :altitude)")
                 .dataSource(dataSource)
                 .build();
     }
