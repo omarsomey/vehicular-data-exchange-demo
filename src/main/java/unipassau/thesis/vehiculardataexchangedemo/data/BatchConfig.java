@@ -26,7 +26,7 @@ import unipassau.thesis.vehiculardataexchangedemo.model.VehiculeData;
 public class BatchConfig {
 
     private final String[] FIELD_NAMES= new String[]{
-            "gps_time", "device_time", "longitude", "latitude", "gps_speed", "hdop", "altitude", "bearing", "engine_temp", "rpm", "engine_load", "throttle_p"
+            "id", "gps_time", "device_time", "longitude", "latitude", "gps_speed", "hdop", "altitude", "bearing", "engine_temp", "rpm", "engine_load", "throttle_p"
     };
 
     @Autowired

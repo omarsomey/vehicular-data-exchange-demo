@@ -14,7 +14,7 @@ public class VehiculeDataProcessor implements ItemProcessor<VehiculeOutput, Vehi
     public VehiculeData process(final VehiculeOutput vehiculeOutput) throws Exception {
 
         VehiculeData vehiculedata = new VehiculeData();
-
+        vehiculedata.setId(Long.parseLong(vehiculeOutput.getId()));
         vehiculedata.setAltitude(vehiculeOutput.getAltitude());
         vehiculedata.setBearing(vehiculeOutput.getBearing());
         vehiculedata.setDevice_time(vehiculeOutput.getDevice_time());

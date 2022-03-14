@@ -2,6 +2,9 @@ package unipassau.thesis.vehiculardataexchangedemo.data;
 
 public class VehiculeOutput {
 
+
+
+    private String id;
     private String gps_time;
     private String device_time;
     private String longitude;
@@ -15,6 +18,13 @@ public class VehiculeOutput {
     private String engine_load;
     private String throttle_p;
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getGps_time() {
         return gps_time;

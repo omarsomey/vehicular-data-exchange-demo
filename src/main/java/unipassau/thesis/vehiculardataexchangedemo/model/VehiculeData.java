@@ -1,12 +1,10 @@
 package unipassau.thesis.vehiculardataexchangedemo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity
+@Entity(name = "vehiculedata")
 public class VehiculeData {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
@@ -120,17 +118,12 @@ public class VehiculeData {
         this.throttle_p = throttle_p;
     }
 
-
-
-
-
-
     public void setId(Long id) {
         this.id = id;
     }
 
-    @Id
     public Long getId() {
         return id;
     }
+
 }

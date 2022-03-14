@@ -27,8 +27,9 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
             log.info("!!! JOB FINISHED! Time to verify the results");
 
             jdbcTemplate.query("SELECT id, altitude, throttle_p FROM vehiculedata",
-                    (rs, row) -> "Id : " + rs.getString(1) + " altitude : " + rs.getString(2) + " throttle_p : " + rs.getString(3)
+                    (rs, row) -> "id  : " + rs.getString(1) + " altitude : " + rs.getString(2) + " throttle_p : " + rs.getString(3)
             ).forEach(str -> System.out.println(str));
+
         }
     }
 }
