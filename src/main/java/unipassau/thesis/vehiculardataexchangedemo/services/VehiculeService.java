@@ -14,9 +14,7 @@ public class VehiculeService {
     private VehiculeDataRepository vehiculeDataRepository;
 
 
-    public List<VehiculeData> list(){
-        return vehiculeDataRepository.findAll();
-    }
+    public List<VehiculeData> list(){return vehiculeDataRepository.findAll();    }
 
 
 }
