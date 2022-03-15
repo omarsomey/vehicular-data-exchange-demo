@@ -11,10 +11,8 @@ import java.util.List;
 @RestController
 public class VehiculeDataController {
 
-
     @Autowired
     private VehiculeService vehiculeService;
-
 
     @GetMapping("/vehiculedata")
     public List<VehiculeData> getVehiculeData(){

@@ -20,7 +20,6 @@ public class KeyGeneratorController {
     public ResponseEntity<RSAVO> getRsaKeyPair() throws NoSuchAlgorithmException {
         RSAVO vo = keygeneratorservice.getKeyPair();
         return new ResponseEntity<>(vo, HttpStatus.OK);
-
     }
 
 

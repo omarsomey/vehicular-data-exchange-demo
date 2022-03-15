@@ -8,7 +8,6 @@ public class VehiculeData {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-
     private String gps_time;
     private String device_time;
     private String longitude;
