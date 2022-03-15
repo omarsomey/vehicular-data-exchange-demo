@@ -3,6 +3,7 @@ package unipassau.thesis.vehiculardataexchangedemo.model;
 import javax.persistence.*;
 
 @Entity(name = "vehiculedata")
+@Table(name = "vehiculedata")
 public class VehiculeData {
 
     @Id
