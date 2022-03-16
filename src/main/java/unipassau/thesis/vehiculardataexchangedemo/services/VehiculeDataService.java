@@ -8,7 +8,7 @@ import unipassau.thesis.vehiculardataexchangedemo.repository.VehiculeDataReposit
 import java.util.List;
 
 @Service
-public class VehiculeService {
+public class VehiculeDataService {
 
     @Autowired
     private VehiculeDataRepository vehiculeDataRepository;

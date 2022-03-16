@@ -1,10 +1,10 @@
-package unipassau.thesis.vehiculardataexchangedemo.VehiculeDataController;
+package unipassau.thesis.vehiculardataexchangedemo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import unipassau.thesis.vehiculardataexchangedemo.model.VehiculeData;
-import unipassau.thesis.vehiculardataexchangedemo.services.VehiculeService;
+import unipassau.thesis.vehiculardataexchangedemo.services.VehiculeDataService;
 
 import java.util.List;
 
@@ -12,11 +12,11 @@ import java.util.List;
 public class VehiculeDataController {
 
     @Autowired
-    private VehiculeService vehiculeService;
+    private VehiculeDataService vehiculeDataService;
 
     @GetMapping("/vehiculedata")
     public List<VehiculeData> getVehiculeData(){
-        return  vehiculeService.list();
+        return  vehiculeDataService.list();
     }
 
 }
