@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class VehicularDataExchangeDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(VehicularDataExchangeDemoApplication.class, args);
-	}
+		SpringApplication.run(VehicularDataExchangeDemoApplication.class, args);}
 
 }
