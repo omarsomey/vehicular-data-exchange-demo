@@ -33,7 +33,6 @@ public class KeyGeneratorController {
     }
     @GetMapping(value = "/bob/getRsaKeyPair")
     public ResponseEntity<Bob> getBobRsaKeyPair() throws NoSuchAlgorithmException {
-        System.out.println(alice.getPublicKey());
         Character character = keygeneratorservice.getKeyPair();
         bob.setPublicKey(character.getPublicKey());
         bob.setPrivatekey(character.getPrivatekey());

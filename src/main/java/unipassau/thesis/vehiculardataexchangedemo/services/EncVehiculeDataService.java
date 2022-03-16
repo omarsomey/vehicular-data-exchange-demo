@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import unipassau.thesis.vehiculardataexchangedemo.model.EncVehiculeData;
+import unipassau.thesis.vehiculardataexchangedemo.model.VehiculeData;
 import unipassau.thesis.vehiculardataexchangedemo.repository.EncVehiculeDataRepository;
+import unipassau.thesis.vehiculardataexchangedemo.repository.VehiculeDataRepository;
 
 import java.security.Timestamp;
 import java.util.ArrayList;
@@ -15,6 +17,13 @@ import java.util.Map;
 @Service
 public class EncVehiculeDataService {
 
+    @Autowired
+    private EncVehiculeDataRepository encVehiculeDataRepository;
+
+    public List<EncVehiculeData> list(){return encVehiculeDataRepository.findAll();    }
+
+
+/*
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -36,6 +45,7 @@ public class EncVehiculeDataService {
         }
         return encVehiculeData;
     }
+*/
 
 
 
