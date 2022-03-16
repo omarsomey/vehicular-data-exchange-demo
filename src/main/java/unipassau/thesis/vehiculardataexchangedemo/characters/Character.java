@@ -1,7 +1,6 @@
-package unipassau.thesis.vehiculardataexchangedemo.utils;
+package unipassau.thesis.vehiculardataexchangedemo.characters;
 
-public class RSAVO {
-
+public class Character {
     private String privatekey;
     private String publicKey;
 

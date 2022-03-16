@@ -1,8 +1,9 @@
 package unipassau.thesis.vehiculardataexchangedemo.services;
 
 import org.springframework.stereotype.Service;
+import unipassau.thesis.vehiculardataexchangedemo.characters.Character;
 import unipassau.thesis.vehiculardataexchangedemo.utils.RSAUtil;
-import unipassau.thesis.vehiculardataexchangedemo.utils.RSAVO;
+
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
@@ -10,12 +11,12 @@ import java.util.Base64;
 @Service
 public class KeyGeneratorService {
 
-    public RSAVO getKeyPair() throws NoSuchAlgorithmException {
-        RSAVO vo = new RSAVO();
+    public Character getKeyPair() throws NoSuchAlgorithmException {
+        Character character = new Character();
         RSAUtil keyPairGenerator = new RSAUtil();
-        vo.setPrivatekey(Base64.getEncoder().encodeToString(keyPairGenerator.getPrivateKey().getEncoded()));
-        vo.setPublicKey(Base64.getEncoder().encodeToString(keyPairGenerator.getPublicKey().getEncoded()));
-        return  vo;
+        character.setPrivatekey(Base64.getEncoder().encodeToString(keyPairGenerator.getPrivateKey().getEncoded()));
+        character.setPublicKey(Base64.getEncoder().encodeToString(keyPairGenerator.getPublicKey().getEncoded()));
+        return  character;
     }
 
 }

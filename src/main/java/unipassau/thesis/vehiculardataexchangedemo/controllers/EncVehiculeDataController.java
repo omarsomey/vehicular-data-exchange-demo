@@ -13,7 +13,7 @@ public class EncVehiculeDataController {
     @Autowired
     private EncVehiculeDataService encVehiculeDataService;
 
-    @GetMapping("/encVehiculeData")
+    @GetMapping("/data/encVehiculeData")
     public List<EncVehiculeData> getEncVehiculeData(){
         return encVehiculeDataService.fetch();
     }

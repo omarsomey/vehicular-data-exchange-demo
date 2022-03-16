@@ -14,7 +14,7 @@ public class VehiculeDataController {
     @Autowired
     private VehiculeDataService vehiculeDataService;
 
-    @GetMapping("/vehiculedata")
+    @GetMapping("/data/vehiculeData")
     public List<VehiculeData> getVehiculeData(){
         return  vehiculeDataService.list();
     }

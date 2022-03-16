@@ -30,8 +30,8 @@ public class EncVehiculeDataService {
             EncVehiculeData obj = new EncVehiculeData();
 
             obj.setId(((Long) row.get("ID")).longValue());
-            obj.setEncrpytedData((String)row.get("ENCRYPTEDDATA"));
             obj.setTimestamp((String) row.get("TIMESTAMP"));
+            obj.setEncrpytedData((String)row.get("ENCRYPTEDDATA"));
             encVehiculeData.add(obj);
         }
         return encVehiculeData;
