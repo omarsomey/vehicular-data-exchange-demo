@@ -1,30 +1,26 @@
-package unipassau.thesis.vehiculardataexchangedemo.data;
+package unipassau.thesis.vehiculardataexchangedemo.model;
 
-public class VehiculeOutput {
+import javax.persistence.*;
 
+@Entity(name = "vehicledata")
+@Table(name = "vehicledata")
+public class VehicleData {
 
-
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
     private String gps_time;
     private String device_time;
     private String longitude;
     private String latitude;
     private String gps_speed;
-    private String hdop;
+    private String hdoP;
     private String altitude;
     private String bearing;
     private String engine_temp;
     private String rpm;
     private String engine_load;
     private String throttle_p;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getGps_time() {
         return gps_time;
@@ -67,11 +63,11 @@ public class VehiculeOutput {
     }
 
     public String getHdop() {
-        return hdop;
+        return hdoP;
     }
 
     public void setHdop(String hdoP) {
-        this.hdop = hdoP;
+        this.hdoP = hdoP;
     }
 
     public String getAltitude() {
@@ -120,6 +116,14 @@ public class VehiculeOutput {
 
     public void setThrottle_p(String throttle_p) {
         this.throttle_p = throttle_p;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 
 }

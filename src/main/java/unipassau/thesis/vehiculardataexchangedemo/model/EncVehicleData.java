@@ -3,8 +3,8 @@ package unipassau.thesis.vehiculardataexchangedemo.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "enc_vehicule_data")
-public class EncVehiculeData {
+@Table(name = "enc_vehicle_data")
+public class EncVehicleData {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;

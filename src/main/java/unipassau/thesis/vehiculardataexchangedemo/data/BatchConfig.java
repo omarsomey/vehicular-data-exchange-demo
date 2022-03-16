@@ -18,7 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
-import unipassau.thesis.vehiculardataexchangedemo.model.VehiculeData;
+import unipassau.thesis.vehiculardataexchangedemo.model.VehicleData;
 
 
 @Configuration
@@ -36,28 +36,28 @@ public class BatchConfig {
     public StepBuilderFactory stepBuilderFactory;
 
     @Bean
-    public FlatFileItemReader<VehiculeOutput> reader() {
-        return new FlatFileItemReaderBuilder<VehiculeOutput>()
-                .name("VehiculeOutputItemReader")
+    public FlatFileItemReader<VehicleOutput> reader() {
+        return new FlatFileItemReaderBuilder<VehicleOutput>()
+                .name("VehicleOutputItemReader")
                 .resource(new ClassPathResource("OBD.csv"))
                 .delimited()
                 .names(FIELD_NAMES)
-                .fieldSetMapper(new BeanWrapperFieldSetMapper<VehiculeOutput>() {{
-                    setTargetType(VehiculeOutput.class);
+                .fieldSetMapper(new BeanWrapperFieldSetMapper<VehicleOutput>() {{
+                    setTargetType(VehicleOutput.class);
                 }})
                 .build();
     }
 
     @Bean
-    public VehiculeDataProcessor processor() {
-        return new VehiculeDataProcessor();
+    public VehicleDataProcessor processor() {
+        return new VehicleDataProcessor();
     }
 
     @Bean
-    public JdbcBatchItemWriter<VehiculeData> writer(DataSource dataSource) {
-        return new JdbcBatchItemWriterBuilder<VehiculeData>()
+    public JdbcBatchItemWriter<VehicleData> writer(DataSource dataSource) {
+        return new JdbcBatchItemWriterBuilder<VehicleData>()
                 .itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())
-                .sql("INSERT INTO vehiculedata (id, gps_time, device_time, longitude, latitude, gps_speed, hdop, altitude, bearing, engine_temp, rpm, engine_load, throttle_p) "
+                .sql("INSERT INTO vehicledata (id, gps_time, device_time, longitude, latitude, gps_speed, hdop, altitude, bearing, engine_temp, rpm, engine_load, throttle_p) "
                         + " VALUES (:id, :gps_time, :device_time, :longitude, :latitude, :gps_speed, :hdop, :altitude, :bearing, :engine_temp, :rpm, :engine_load, :throttle_p)")
                 .dataSource(dataSource)
                 .build();
@@ -74,9 +74,9 @@ public class BatchConfig {
     }
 
     @Bean
-    public Step step1(JdbcBatchItemWriter<VehiculeData> writer) {
+    public Step step1(JdbcBatchItemWriter<VehicleData> writer) {
         return stepBuilderFactory.get("step1")
-                .<VehiculeOutput, VehiculeData> chunk(10)
+                .<VehicleOutput, VehicleData> chunk(10)
                 .reader(reader())
                 .processor(processor())
                 .writer(writer)
